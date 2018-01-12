@@ -7,7 +7,7 @@
     "test": "npm run lint",
     "build": "tsc --p .",
     "lint": "tslint --project .",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "rimraf dist && npm run build"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,8 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "tslint": "^5.9.1"
+    "rimraf": "^2.6.2"
+    "tslint": "^5.9.1",
     "typescript": "^2.6.2"
   }
 }
