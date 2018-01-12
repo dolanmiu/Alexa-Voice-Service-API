@@ -4,6 +4,11 @@
     "words": [
     ],
     "ignorePaths": [
-        ".gitignore"
+        "**/node_modules/**",
+        "**/vscode-extension/**",
+        "**/.git/**",
+        ".vscode",
+        "typings",
+        "resources"
     ]
 }
