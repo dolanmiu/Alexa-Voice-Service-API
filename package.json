@@ -1,5 +1,5 @@
 {
-  "name": "awesome-avs",
+  "name": "avs-api",
   "version": "1.0.0",
   "description": "Alexa Voice Service V2 API which utilities streaming and HTTP/2",
   "main": "dist/index.js",
@@ -28,9 +28,11 @@
   "author": "Dolan Miu",
   "license": "MIT",
   "dependencies": {
-    "@types/lodash": "^4.14.77",
     "@types/node": "^8.0.17",
-    "lodash": "^4.17.4"
+    "@types/ramda": "^0.25.15",
+    "@types/spdy": "^3.4.4",
+    "ramda": "^0.25.0",
+    "spdy": "^3.4.7"
   },
   "devDependencies": {
     "cspell": "^2.0.4",
