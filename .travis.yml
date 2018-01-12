@@ -6,4 +6,5 @@ node_js:
 addons:
 script:
     - npm run test
+    - npm run spell
     - npm run build
