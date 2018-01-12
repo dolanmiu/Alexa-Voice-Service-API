@@ -31,7 +31,7 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
     "tslint": "^5.9.1",
     "typescript": "^2.6.2"
   }
