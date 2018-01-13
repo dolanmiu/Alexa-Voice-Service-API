@@ -1,6 +1,8 @@
 {
-  "prettier.trailingComma": "all",
-  "prettier.printWidth": 140,
-  "editor.formatOnSave": true,
-  "prettier.tabWidth": 4
+    "prettier.trailingComma": "all",
+    "prettier.printWidth": 140,
+    "editor.formatOnSave": true,
+    "prettier.tabWidth": 4,
+    "prettier.arrowParens": "always",
+    "prettier.bracketSpacing": false,
 }
