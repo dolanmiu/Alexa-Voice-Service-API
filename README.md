@@ -1,3 +1,4 @@
+[![Chat on Gitter][gitter-image]][gitter-url]
 [![Build Status][travis-image]][travis-url]
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Greenkeeper badge][greenkeeper-image]][greenkeeper-url]
@@ -10,6 +11,8 @@ Alexa Voice Service V2 API which utilities streaming and HTTP/2
 
 Made with 💖 by Dolan
 
+[gitter-image]: https://badges.gitter.im/dolanmiu/alexa-voice-service.svg
+[gitter-url]: https://gitter.im/alexa-voice-service/Lobby
 [travis-image]: https://travis-ci.org/dolanmiu/Alexa-Voice-Service-API.svg?branch=master
 [travis-url]: https://travis-ci.org/dolanmiu/Alexa-Voice-Service-API
 [daviddm-image]: https://david-dm.org/dolanmiu/Alexa-Voice-Service-API.svg?theme=shields.io
