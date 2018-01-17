@@ -16,6 +16,7 @@
         "no-string-literal": false,
         "no-console": [false],
         "member-ordering": false,
-        "object-literal-key-quotes": false
+        "object-literal-key-quotes": false,
+        "no-implicit-dependencies": false
     }
 }
