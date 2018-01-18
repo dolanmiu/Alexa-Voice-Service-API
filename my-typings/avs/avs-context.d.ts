@@ -57,5 +57,7 @@ declare namespace AVS {
         };
     }
 
-    type AVSContextItem = PlaybackState | AlertsState | VolumeState | SpeechState | IndicatorState;
+    type ContextItem = PlaybackState | AlertsState | VolumeState | SpeechState | IndicatorState;
+
+    type Context = ContextItem[];
 }

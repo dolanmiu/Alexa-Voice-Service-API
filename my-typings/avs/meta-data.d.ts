@@ -1,6 +1,6 @@
 declare namespace AVS {
     interface EventMetadata<T> {
-        context?: AVS.AVSContextItem[];
+        context?: AVS.ContextItem[];
         event: {
             header: {
                 namespace: string;
