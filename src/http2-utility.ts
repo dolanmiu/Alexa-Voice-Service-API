@@ -8,7 +8,7 @@ export default class Http2Utility {
 
         ${JSON.stringify(body)}
 
-        --HTTP2_BOUNDARY--
+        --${HTTP2_BOUNDARY}--
         `;
 
         return output;
