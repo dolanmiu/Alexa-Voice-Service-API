@@ -13,5 +13,7 @@ declare namespace AVS {
                 };
             };
         }
+
+        type SpeechRecognizerMetadata = AVS.EventMetadata<RecognizeEvent>;
     }
 }

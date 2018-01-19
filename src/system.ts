@@ -27,7 +27,7 @@ export default class System {
         //     }
         // });
 
-        const f = this.http2Utility.createMetadata<AVS.System.SynchronizeStateMetadata>({
+        const metadata = this.http2Utility.createMetadata<AVS.System.SynchronizeStateMetadata>({
             context: context,
             event: {
                 header: {
@@ -39,7 +39,7 @@ export default class System {
             },
         });
 
-        req.write(f);
+        req.write(metadata);
 
         req.setEncoding("utf8");
         let data = "";
