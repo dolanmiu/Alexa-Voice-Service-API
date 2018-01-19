@@ -39,10 +39,7 @@ export default class System {
             },
         });
 
-        req.write(f, () => {
-            console.log("dun knoe");
-            console.log();
-        });
+        req.write(f);
 
         req.setEncoding("utf8");
         let data = "";

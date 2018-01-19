@@ -1,6 +1,6 @@
 {
     "version": "0.1",
     "language": "en",
-    "words": ["spdy"],
+    "words": ["spdy", "multipart"],
     "ignorePaths": ["**/node_modules/**", "**/vscode-extension/**", "**/.git/**", ".vscode", "typings", "resources"]
 }
