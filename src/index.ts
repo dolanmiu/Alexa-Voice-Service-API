@@ -1,18 +1,22 @@
-import * as https from "https";
-import * as spdy from "spdy";
+import * as http2 from "http2";
+
+import Connection from "./connection";
+import {BASE_URLS} from "./constants/base-urls";
+import {API_VERSION} from "./constants/general";
 import SpeechRecognizer from "./speech-recognizer";
+import System from "./system";
 
-const agent = spdy.createAgent({
-    host: "www.google.com",
-    port: 443,
+const client = http2.connect(`${BASE_URLS.europe}`);
+client.on("error", (err) => console.error(err));
+client.on("socketError", (err) => console.error(err));
 
-    // Optional SPDY options
-    spdy: {
-        plain: false,
-        ssl: true,
-        // **optional** send X_FORWARDED_FOR
-        "x-forwarded-for": "127.0.0.1",
-    },
-});
+const context: AVS.Context = [];
 
-const s = new SpeechRecognizer(agent);
+const speechSynthesizer = new SpeechRecognizer(client);
+const connection = new Connection(client);
+const system = new System(client);
+
+const accessToken = "";
+
+connection.connect(accessToken);
+system.synchronizeState(accessToken, context);

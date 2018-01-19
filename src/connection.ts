@@ -1,29 +1,16 @@
 // https://developer.amazon.com/docs/alexa-voice-service/manage-http2-connection.html
-import * as https from "https";
-import * as spdy from "spdy";
+import * as http2 from "http2";
+import {API_VERSION} from "./constants/general";
 
 export default class Connection {
-    constructor(private readonly agent: spdy.Agent, private readonly endpoint: string) {}
+    constructor(private readonly client: http2.ClientHttp2Session) {}
 
     public connect(accessToken: string): void {
-        const req = https.get(
-            {
-                host: `${this.endpoint}/directives`,
-                agent: this.agent,
-                headers: {
-                    authorization: `Bearer ${accessToken}`,
-                },
-            },
-            (response) => {
-                // TODO
-            },
-        );
-
-        req.on("push", (stream) => {
-            stream.on("error", (err) => {
-                // Handle error
-            });
-            // Read data from stream
+        const req = this.client.request({
+            ":path": `/${API_VERSION}/directives`,
+            authorization: `Bearer ${accessToken}`,
         });
+
+        req.end();
     }
 }

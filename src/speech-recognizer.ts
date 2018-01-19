@@ -1,26 +1,10 @@
 // https://developer.amazon.com/docs/alexa-voice-service/speechrecognizer.html
-import * as https from "https";
-import * as spdy from "spdy";
+import * as http2 from "http2";
 
 export default class SpeechRecognizer {
-    constructor(private agent: spdy.Agent) {}
+    constructor(private readonly client: http2.ClientHttp2Session) {}
 
     public fire(): void {
-        const req = https.get(
-            {
-                host: "https://avs-alexa-eu.amazon.com",
-                agent: this.agent,
-            },
-            (response) => {
-                // TODO
-            },
-        );
-
-        req.on("push", (stream) => {
-            stream.on("error", (err) => {
-                // Handle error
-            });
-            // Read data from stream
-        });
+        // Todo
     }
 }
