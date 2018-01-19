@@ -1,5 +1,6 @@
 // https://developer.amazon.com/docs/alexa-voice-service/manage-http2-connection.html
 import * as http2 from "http2";
+
 import {API_VERSION} from "./constants/general";
 
 export default class Connection {
