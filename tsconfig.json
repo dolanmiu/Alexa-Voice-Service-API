@@ -9,10 +9,7 @@
         "target": "es6",
         "strictNullChecks": true,
         "declaration": true
+        //"noUnusedLocals": true
     },
-    "exclude": [
-        "./**/*.spec.ts",
-        "./node_modules",
-        "dist"
-    ]
+    "exclude": ["./**/*.spec.ts", "./node_modules", "dist"]
 }
