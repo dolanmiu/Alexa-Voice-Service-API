@@ -1,5 +1,5 @@
 declare namespace AVS {
-    interface EventMetadata {
+    interface EventMetadata<T> {
         context?: AVS.ContextItem[];
         event: {
             header: {
@@ -8,10 +8,11 @@ declare namespace AVS {
                 messageId: string;
                 dialogRequestId?: string;
             };
+            payload: T;
         };
     }
 
-    interface DirectiveMetadata {
+    interface DirectiveMetadata<T> {
         directive: {
             header: {
                 namespace: string;
@@ -19,6 +20,7 @@ declare namespace AVS {
                 messageId: string;
                 dialogRequestId?: string;
             };
+            payload: T;
         };
     }
 }

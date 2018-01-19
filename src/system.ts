@@ -27,7 +27,7 @@ export default class System {
         //     }
         // });
 
-        const f = this.http2Utility.createMetadata({
+        const f = this.http2Utility.createMetadata<AVS.System.SynchronizeStateMetadata>({
             context: context,
             event: {
                 header: {
