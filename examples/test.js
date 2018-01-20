@@ -21,5 +21,8 @@ const stream = record.start({
 });
 
 const avs = new AVSApi(stream, undefined, {
+    clientId: "",
+    clientSecret: "",
+    refreshToken: "",
 });
 console.log(avs.start());
