@@ -77,7 +77,7 @@ export default class SpeechRecognizer {
                 req.write(this.http2Utility.createEnding());
                 req.end();
                 resolve();
-            }, 3000);
+            }, 7000);
         });
     }
 }
