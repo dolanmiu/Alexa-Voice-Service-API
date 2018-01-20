@@ -70,7 +70,9 @@ export default class SpeechRecognizer {
 
             setTimeout(() => {
                 console.log("ending speech");
-                readStream.removeListener("data", () => {});
+                readStream.removeListener("data", () => {
+                    // TODO
+                });
                 console.log("ENDING");
                 req.write(this.http2Utility.createEnding());
                 req.end();
