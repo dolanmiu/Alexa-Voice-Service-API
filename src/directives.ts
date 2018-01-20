@@ -1,9 +1,12 @@
 // https://developer.amazon.com/docs/alexa-voice-service/manage-http2-connection.html
 import * as http2 from "http2";
+import {Observable} from "rxjs/Observable";
 
 import {API_VERSION} from "./constants/general";
 
 export default class Directives {
+    private directive$: Observable<AVS.Directive>;
+
     constructor(private readonly client: http2.ClientHttp2Session) {}
 
     public connect(accessToken: string): Promise<void> {
@@ -38,5 +41,9 @@ export default class Directives {
 
             req.end();
         });
+    }
+
+    public get Directive$(): Observable<AVS.Directive> {
+        return this.directive$;
     }
 }
