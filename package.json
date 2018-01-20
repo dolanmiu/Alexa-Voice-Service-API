@@ -31,11 +31,14 @@
     "dependencies": {
         "@types/node": "^9.3.0",
         "@types/ramda": "^0.25.15",
+        "@types/request-promise": "^4.1.39",
         "@types/uuid": "^3.4.3",
         "install": "^0.10.2",
         "nan": "^2.8.0",
         "npm": "^5.6.0",
         "ramda": "^0.25.0",
+        "request": "^2.83.0",
+        "request-promise": "^4.2.2",
         "rxjs": "^5.5.6",
         "uuid": "^3.2.1"
     },
