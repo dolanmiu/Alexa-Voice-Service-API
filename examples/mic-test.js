@@ -64,5 +64,7 @@ record
     .start({
         sampleRate: 44100,
         verbose: true,
+        silence: -1,
+        channels: 1,
     })
     .pipe(file);

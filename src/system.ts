@@ -11,21 +11,13 @@ export default class System {
         this.http2Utility = new Http2Utility();
     }
 
-    public synchronizeState(accessToken: string, context: AVS.Context): void {
+    public synchronizeState(accessToken: string, context: AVS.Context): Promise<void> {
         const req = this.client.request({
             ":method": "POST",
             ":path": `/${API_VERSION}/events`,
             authorization: `Bearer ${accessToken}`,
             "content-type": `multipart/form-data; boundary=${HTTP2_BOUNDARY}`,
         });
-
-        console.log("okie");
-
-        // req.on("response", (headers, flags) => {
-        //     for (const name in headers) {
-        //         console.log(`${name}: ${headers[name]}`);
-        //     }
-        // });
 
         const metadata = this.http2Utility.createMetadata<AVS.System.SynchronizeStateMetadata>({
             context: context,
@@ -39,17 +31,28 @@ export default class System {
             },
         });
 
-        req.write(metadata);
+        return new Promise<void>((resolve) => {
+            console.log("System sync");
 
-        req.setEncoding("utf8");
-        let data = "";
-        req.on("data", (chunk) => {
-            data += chunk;
+            req.on("response", (headers, flags) => {
+                // tslint:disable-next-line:forin
+                for (const name in headers) {
+                    console.log(`${name}: ${headers[name]}`);
+                }
+                resolve();
+            });
+
+            req.write(metadata);
+
+            req.setEncoding("utf8");
+            let data = "";
+            req.on("data", (chunk) => {
+                data += chunk;
+            });
+            req.on("end", () => {
+                console.log(`\n${data}`);
+            });
+            req.end();
         });
-        req.on("end", () => {
-            console.log(`\n${data}`);
-            // client.close();
-        });
-        req.end();
     }
 }

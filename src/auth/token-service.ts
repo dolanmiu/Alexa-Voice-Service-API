@@ -14,7 +14,7 @@ export interface IAVSOptions {
     clientSecret: string;
 }
 
-export default class TokenService {
+export class TokenService {
     private token$: Observable<IAmazonTokenResponse>;
 
     constructor(options: IAVSOptions) {

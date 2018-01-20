@@ -15,7 +15,11 @@ const AVSApi = require("../dist").AVSApi;
 
 const stream = record.start({
     verbose: true,
+    silence: "5.0",
+    sampleRate: 16000,
+    channels: 1,
 });
 
-const avs = new AVSApi(stream);
+const avs = new AVSApi(stream, undefined, {
+});
 console.log(avs.start());

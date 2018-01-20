@@ -10,7 +10,8 @@
         "lint": "tslint --project .",
         "prepublishOnly": "rimraf dist && npm run build",
         "spell": "cspell \"src/**/*.ts\"",
-        "example": "node --expose-http2 \"examples/test.js\""
+        "example": "node --expose-http2 \"examples/test.js\"",
+        "mic": "node \"examples/mic-test.js\""
     },
     "repository": {
         "type": "git",

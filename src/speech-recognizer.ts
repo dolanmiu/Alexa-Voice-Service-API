@@ -12,7 +12,7 @@ export default class SpeechRecognizer {
         this.http2Utility = new Http2Utility();
     }
 
-    public recognize(accessToken: string, context: AVS.Context, readStream: ReadStream): void {
+    public recognize(accessToken: string, context: AVS.Context, readStream: ReadStream): Promise<void> {
         const req = this.client.request({
             ":method": "POST",
             ":path": `/${API_VERSION}/events`,
@@ -29,25 +29,53 @@ export default class SpeechRecognizer {
                     messageId: uuid(),
                 },
                 payload: {
-                    profile: "{{STRING}}",
-                    format: "{{STRING}}",
+                    profile: "NEAR_FIELD",
+                    format: "AUDIO_L16_RATE_16000_CHANNELS_1",
                     initiator: {
-                        type: "{{STRING}}",
+                        type: "TAP",
                     },
                 },
             },
         });
 
-        req.write(metadata);
-        console.log("sdfsd");
+        return new Promise<void>((resolve) => {
+            req.on("response", (headers, flags) => {
+                console.log("response from speech");
 
-        readStream.on("data", (chunk: Buffer) => {
-            console.log("data in");
-            console.log(chunk.length);
+                // tslint:disable-next-line:forin
+                for (const name in headers) {
+                    console.log(`${name}: ${headers[name]}`);
+                }
+            });
 
-            const data = this.http2Utility.createBinaryAudioAttachment(chunk);
+            req.write(metadata);
+            console.log("speech recognizer");
 
-            req.write(data);
+            readStream.on("data", (chunk: Buffer) => {
+                console.log("data in");
+                console.log(chunk.length);
+
+                const audio = this.http2Utility.createBinaryAudioAttachment(chunk);
+                req.write(audio);
+            });
+
+            req.setEncoding("utf8");
+            let data = "";
+            req.on("data", (chunk) => {
+                data += chunk;
+            });
+            req.on("end", () => {
+                console.log(`\n${data}`);
+            });
+
+            setTimeout(() => {
+                console.log("ending speech");
+                readStream.removeListener("data", () => {
+                    req.write(this.http2Utility.createEnding());
+                    req.end();
+                    resolve();
+                });
+            }, 3000);
         });
     }
 }
