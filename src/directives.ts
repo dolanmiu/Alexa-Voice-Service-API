@@ -13,6 +13,7 @@ export default class Directives {
         });
 
         req.on("response", (headers, flags) => {
+            // tslint:disable-next-line:forin
             for (const name in headers) {
                 console.log(`${name}: ${headers[name]}`);
             }
