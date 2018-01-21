@@ -57,6 +57,7 @@ export default class SpeechRecognizer {
 
                 const audio = this.http2Utility.createBinaryAudioAttachment(chunk);
                 req.write(audio);
+                req.write(chunk);
             });
 
             req.setEncoding("utf8");

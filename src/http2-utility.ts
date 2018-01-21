@@ -30,7 +30,6 @@ export default class Http2Utility {
         Content-Disposition: form-data; name="audio"
         Content-Type: application/octet-stream
 
-        ${buffer}
         `;
 
         return output;
