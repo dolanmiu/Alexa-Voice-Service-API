@@ -62,9 +62,9 @@ var file = fs.createWriteStream("test.wav", {encoding: "binary"});
 
 record
     .start({
-        sampleRate: 44100,
+        sampleRate: 16000,
         verbose: true,
-        silence: -1,
+        silence: "1.0",
         channels: 1,
     })
     .pipe(file);
