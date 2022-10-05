@@ -4,5 +4,5 @@
     "editor.formatOnSave": true,
     "prettier.tabWidth": 4,
     "prettier.arrowParens": "always",
-    "prettier.bracketSpacing": false,
+    "prettier.bracketSpacing": true
 }

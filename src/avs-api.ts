@@ -1,9 +1,9 @@
-import {ReadStream, WriteStream} from "fs";
+import { ReadStream, WriteStream } from "fs";
 import * as http2 from "http2";
 
-import {IAVSOptions, TokenService} from "./auth/token-service";
-import {BASE_URLS} from "./constants/base-urls";
-import {API_VERSION} from "./constants/general";
+import { IAVSOptions, TokenService } from "./auth/token-service";
+import { BASE_URLS } from "./constants/base-urls";
+import { API_VERSION } from "./constants/general";
 import Directives from "./directives";
 import SpeechRecognizer from "./speech-recognizer";
 import System from "./system";

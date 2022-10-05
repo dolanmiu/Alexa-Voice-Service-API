@@ -1,5 +1,5 @@
 import * as request from "request-promise";
-import {Observable} from "rxjs/Observable";
+import { Observable } from "rxjs/Observable";
 
 export interface IAmazonTokenResponse {
     access_token: string;

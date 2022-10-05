@@ -1,4 +1,4 @@
-import {HTTP2_BOUNDARY} from "./constants/general";
+import { HTTP2_BOUNDARY } from "./constants/general";
 
 export default class Http2Utility {
     public createMetadata<T>(body: T): string {

@@ -1,7 +1,7 @@
 // https://developer.amazon.com/docs/alexa-voice-service/system.html
 import * as http2 from "http2";
 
-import {API_VERSION, HTTP2_BOUNDARY} from "./constants/general";
+import { API_VERSION, HTTP2_BOUNDARY } from "./constants/general";
 import Http2Utility from "./http2-utility";
 
 export default class System {

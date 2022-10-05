@@ -1,9 +1,9 @@
 // https://developer.amazon.com/docs/alexa-voice-service/speechrecognizer.html
-import {ReadStream} from "fs";
+import { ReadStream } from "fs";
 import * as http2 from "http2";
-import {v4 as uuid} from "uuid";
+import { v4 as uuid } from "uuid";
 
-import {API_VERSION, HTTP2_BOUNDARY} from "./constants/general";
+import { API_VERSION, HTTP2_BOUNDARY } from "./constants/general";
 import Http2Utility from "./http2-utility";
 
 export default class SpeechRecognizer {

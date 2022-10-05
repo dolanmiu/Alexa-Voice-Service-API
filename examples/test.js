@@ -17,12 +17,12 @@ const stream = record.start({
     verbose: true,
     silence: "5.0",
     sampleRate: 16000,
-    channels: 1,
+    channels: 1
 });
 
 const avs = new AVSApi(stream, undefined, {
     clientId: "",
     clientSecret: "",
-    refreshToken: "",
+    refreshToken: ""
 });
 console.log(avs.start());

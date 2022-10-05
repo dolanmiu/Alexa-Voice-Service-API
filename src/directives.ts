@@ -1,8 +1,8 @@
 // https://developer.amazon.com/docs/alexa-voice-service/manage-http2-connection.html
 import * as http2 from "http2";
-import {Observable} from "rxjs/Observable";
+import { Observable } from "rxjs/Observable";
 
-import {API_VERSION} from "./constants/general";
+import { API_VERSION } from "./constants/general";
 
 export default class Directives {
     private directive$: Observable<AVS.Directive>;
